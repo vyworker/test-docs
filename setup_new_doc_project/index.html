@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://vyworker.github.io/test-docs/setup_new_doc_project/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Настройка нового проекта - Тестовая документация</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0430 \u043d\u043e\u0432\u043e\u0433\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u0430";
+        var mkdocs_page_input_path = "setup_new_doc_project.md";
+        var mkdocs_page_url = "/test-docs/setup_new_doc_project/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Тестовая документация
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Overview</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../quickstart.md">Quick Start</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Настройка нового проекта</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1">Шаг 1. Создайте структуру файлов в репозитории:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-mkdocsyml">Шаг 2. Заполните файл конфигурации mkdocs.yml</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3">Шаг 3. Напишите материалы документации:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-github-actions">Шаг 4. Настройте автоматическую сборку через GitHub Actions:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-github-pages">Шаг 5. Включите GitHub Pages в настройках репозитория:</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Тестовая документация</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Настройка нового проекта</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="setup-new-documentation-project">Setup New Documentation Project</h1>
+<h2 id="introduction">Introduction.</h2>
+<p>Самый удобный, красивый и современный способ сделать документацию для аддона Blender — использовать MkDocs с темой Material и бесплатным хостингом GitHub Pages. Это даст вам чистый сайт с поиском, тёмной темой и удобной навигацией из простых Markdown-файлов.</p>
+<p>Ниже пошаговое руководство по настройке автоматической публикации документации.</p>
+<h2 id="1">Шаг 1. Создайте структуру файлов в репозитории:</h2>
+<p>Подготовка папки docs и конфигурации.</p>
+<p>В корне вашего репозитория аддона создайте папку <strong>docs</strong> и файл <strong>mkdocs.yml</strong>.</p>
+<p>Ваша структура проекта должна выглядеть так:</p>
+<pre><code>it_kafe_docs/
+├── docs/
+│   └── index.md
+└── mkdocs.yml
+</code></pre>
+<h2 id="2-mkdocsyml">Шаг 2. Заполните файл конфигурации mkdocs.yml</h2>
+<p>Настройка названия, темы и меню</p>
+<p>Откройте файл mkdocs.yml и добавьте базовые настройки своего проекта:</p>
+<pre><code class="language-yaml">site_name: Название вашего софта
+site_description: Документация и руководство пользователя
+site_url: https://username.github.io/repository-name/
+
+theme:
+name: material
+palette:
+    scheme: slate # Тёмная тема по умолчанию (как в Blender)
+    primary: indigo
+features:
+    - navigation.tabs
+    - search.suggest
+
+nav:
+- Главная: index.md
+- Установка: installation.md
+- Быстрый старт: quickstart.md
+</code></pre>
+<h2 id="3">Шаг 3. Напишите материалы документации:</h2>
+<p>Заполнение страниц в формате Markdown.</p>
+<ul>
+<li>В папке docs/ создайте файлы, указанные в меню (index.md, installation.md и т. д.), и напишите текст.</li>
+<li>В docs/index.md напишите краткое описание аддона и его ключевые возможности.</li>
+<li>Для скриншотов создайте папку docs/assets/ и ссылайтесь на них через стандартный Markdown:</li>
+</ul>
+<pre><code class="language-text">![Скриншот](assets/screenshot.png).
+</code></pre>
+<h2 id="4-github-actions">Шаг 4. Настройте автоматическую сборку через GitHub Actions:</h2>
+<p>Автодеплой при каждом коммите в ветку main.</p>
+<ul>
+<li>В корне репозитория создайте файл .github/workflows/deploy.yml.</li>
+<li>Добавьте в него готовый скрипт, который будет автоматически собирать и публиковать сайт:</li>
+</ul>
+<pre><code class="language-yaml">name: Publish Documentation
+
+on:
+push:
+    branches:
+    - main
+
+permissions:
+contents: write
+
+jobs:
+deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+        python-version: 3.x
+
+    - run: echo &quot;cache_id=$(date --utc +'%Y%V')&quot; &gt;&gt; $GITHUB_ENV
+
+    - uses: actions/cache@v4
+        with:
+        key: mkdocs-material-${{ env.cache_id }}
+        path: ~/.cache/pip
+        restore-keys: |
+            mkdocs-material-
+
+    - run: pip install mkdocs-material
+
+    - run: mkdocs gh-deploy --force
+</code></pre>
+<h2 id="5-github-pages">Шаг 5. Включите GitHub Pages в настройках репозитория:</h2>
+<p>Финальная активация хостинга.</p>
+<ul>
+<li>Отправьте изменения в GitHub (git push).</li>
+<li>Перейдите в ваш репозиторий на GitHub: Settings &gt; Pages.</li>
+<li>В поле Source выберите Deploy from a branch.</li>
+<li>В поле Branch выберите ветку gh-pages (она автоматически создастся после выполнения GitHub Action из предыдущего шага) и папку / (root).</li>
+<li>Нажмите Save.</li>
+</ul>
+<p>Через 1–2 минуты ваш сайт будет доступен по адресу:</p>
+<pre><code>https://&lt;ваш-логин&gt;.github.io/&lt;имя-репозитория&gt;/.
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../installation/" class="btn btn-neutral float-left" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../installation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
